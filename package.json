@@ -27,6 +27,11 @@
   "author": "Jorge Padilla",
   "license": "MIT",
   "dependencies": {
+    "chalk": "^4.1.2",
+    "cli-spinner": "^0.2.10",
+    "firebase-admin": "^9.11.0",
+    "lodash": "^4.17.21",
+    "prompt-sync": "^4.2.0",
     "yargs": "^17.1.0"
   },
   "devDependencies": {
@@ -34,11 +39,7 @@
     "@types/lodash": "^4.14.172",
     "@types/prompt-sync": "^4.1.1",
     "@types/yargs": "^17.0.2",
-    "chalk": "^4.1.2",
-    "cli-spinner": "^0.2.10",
-    "firebase-admin": "^9.11.0",
-    "lodash": "^4.17.21",
-    "prompt-sync": "^4.2.0",
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
     "ts-loader": "^9.2.5",
     "typescript": "^4.3.5",
     "webpack": "^5.49.0",

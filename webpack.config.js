@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const nodeExternals = require('webpack-node-externals');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
     mode: 'production',
@@ -18,7 +19,12 @@ module.exports = {
         rules: [
             {
                 test: /\.tsx?$/,
-                loader: 'ts-loader',
+                use: {
+                    loader: 'ts-loader',
+                    options: {
+                        projectReferences: true
+                    }
+                },
             }
         ]
     },
@@ -27,11 +33,15 @@ module.exports = {
     },
     target: 'node',
     externals: [
-        nodeExternals({ 
-            allowlist: ['lodash', 'chalk', 'cli-spinner', 'prompt-sync', 'firebase-admin'] 
-        })
+        nodeExternals()
     ],
+    // externals: [
+    //     nodeExternals({ 
+    //         allowlist: ['lodash', 'chalk', 'cli-spinner', 'prompt-sync', 'firebase-admin'] 
+    //     })
+    // ],
     plugins: [
         new webpack.BannerPlugin({ banner: "#!/usr/bin/env node", raw: true }),
+        new CleanWebpackPlugin(),
     ]
 }

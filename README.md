@@ -3,7 +3,7 @@
 [![](https://img.shields.io/npm/l/firestore-db-manager.svg)](https://github.com/andreasonny83/firestore-db-manager/blob/master/LICENSE)
 [![](https://img.shields.io/npm/v/firestore-db-manager.svg)](https://npmjs.org/package/firestore-db-manager)
 
-Firestore Database Manager is a lightweight CLI tool that enables generating backups, restoring backups and deleting any database created with [Cloud Firestore](https://firebase.google.com/docs/firestore).
+Firestore Database Manager is a CLI tool that enables generating backups, restoring backups and deleting any database created with [Cloud Firestore](https://firebase.google.com/docs/firestore).
 
 ## Installation
 
