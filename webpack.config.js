@@ -26,6 +26,8 @@ module.exports = {
     },
     target: 'node',
     externals: [
-        nodeExternals()
+        nodeExternals({ 
+            allowlist: ['lodash', 'chalk', 'cli-spinner', 'prompt-sync', 'firebase-admin'] 
+        })
     ]
 }
