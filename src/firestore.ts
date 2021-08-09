@@ -15,7 +15,6 @@ async function loadSettings() {
 
 async function initializeApp() {
     const key = await readKey();
-    constants.settings.databaseURL = `https://${key["project_id"]}.firebaseio.com`;
     await loadSettings();
     try {
         admin.initializeApp({
