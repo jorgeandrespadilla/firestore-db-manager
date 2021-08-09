@@ -54,8 +54,11 @@ https://console.firebase.google.com/u/0/project/<your_database_id>/settings/serv
         }
         return true;
     })
+    .alias("v", "version")
+    .describe("version", "Show current version number")
     .help("h")
     .alias("h", "help")
+    .describe("h", "Show available options")
     .showHelpOnFail(false, "Specify --help for available options").argv;
 
 async function main(argv: any) {
