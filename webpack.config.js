@@ -11,7 +11,8 @@ module.exports = {
     entry: './src/index.ts',
     output: {
         filename: 'index.js',
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
+        clean: true,
     },
     module: {
         rules: [
@@ -29,5 +30,8 @@ module.exports = {
         nodeExternals({ 
             allowlist: ['lodash', 'chalk', 'cli-spinner', 'prompt-sync', 'firebase-admin'] 
         })
+    ],
+    plugins: [
+        new webpack.BannerPlugin({ banner: "#!/usr/bin/env node", raw: true }),
     ]
 }

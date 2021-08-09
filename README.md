@@ -17,7 +17,7 @@ Install with [yarn](https://yarnpkg.com/package/firestore-db-manager).
 yarn global add firestore-db-manager
 ````
 
-This will install `firestore-db-manager` globally so that it may be run from the command line anywhere.
+This will install `firestore-db` globally so that it may be run from the command line anywhere.
 
 ## Usage
 
@@ -50,7 +50,7 @@ Parameters      | Description
 **Note:** All these parameters are optional and are automatically generated if some of them are missing, or when a configuration file was not found at the current path.
 ## Available options
 
-Flags                        | Description
+Flags                       | Description
 ---                         |--- 
 `-i`, `--init-config`       | Create a default backup configuration file ('backup-config.json')
 `-g`, `--generate-backup`   | Generate a backup of a Firestore database
@@ -60,6 +60,7 @@ Flags                        | Description
 `-v`, `--restore-backup`    | Show current version number
 
 **Note:** Only one option can be specified per execution.
+
 # License
 
 [MIT License](https://andreasonny.mit-license.org/2018) © Jorge Andrés Padilla
