@@ -1,6 +1,8 @@
 import * as _ from 'lodash';
 import * as admin from 'firebase-admin';
-import { uploadBackup, initializeApp, Spinner } from "./tools";
+import { Spinner } from "./utility";
+import initializeApp from './firestore';
+import { readBackup } from './fileOperations';
 
 function convertField(value: any, db: admin.firestore.Firestore): any {
     if (typeof value === 'object' && value !== null && !_.isArray(value) && "__datatype__" in value) {
@@ -58,7 +60,7 @@ async function restoreCollections(collections: any, ref: FirebaseFirestore.Fires
 
 async function restoreBackup() {
     const db = await initializeApp();
-    const backup = await uploadBackup();
+    const backup = await readBackup();
     let sp = new Spinner("Restoring backup");
     sp.start();
     await restoreCollections(backup, db, db);

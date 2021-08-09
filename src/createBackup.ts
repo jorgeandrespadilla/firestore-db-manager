@@ -1,6 +1,8 @@
 import * as _ from 'lodash';
 import * as admin from 'firebase-admin';
-import {Spinner, initializeApp, downloadBackup} from "./tools";
+import { Spinner } from "./utility";
+import initializeApp from './firestore';
+import { downloadBackup } from './fileOperations';
 
 
 function normalizeField(value: any, db: admin.firestore.Firestore): any {

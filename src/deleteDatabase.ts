@@ -1,5 +1,6 @@
 import * as admin from 'firebase-admin';
-import {initializeApp, Spinner} from "./tools";
+import initializeApp from './firestore';
+import { Spinner } from "./utility";
 
 async function deleteDocument(document: FirebaseFirestore.DocumentReference) {
     deleteCollections(document);
