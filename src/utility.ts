@@ -2,16 +2,12 @@ import _ from 'lodash';
 import CliSpinner from 'cli-spinner';
 import chalk from 'chalk';
 
-/**
- * Provides a blue color wrapper for console output.
- * @param msg Message string
- */
+
 export const blue = chalk.hex("#0078D4");
-/**
- * Provides a red color wrapper for console output.
- * @param msg Message string
- */
+
 export const red = chalk.hex("#FF0101");
+
+export const orange = chalk.hex("#F89B0C");
 
 export class Spinner {
 

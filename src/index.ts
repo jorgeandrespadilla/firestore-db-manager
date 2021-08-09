@@ -3,14 +3,14 @@ import promptSync from 'prompt-sync';
 import createBackup from "./createBackup";
 import restoreBackup from "./restoreBackup";
 import deleteDatabase from "./deleteDatabase";
-import { selectedOptions, blue } from './utility';
+import { selectedOptions, blue, orange } from './utility';
 import { createSettings, readKey } from './fileOperations';
 import constants from './constants';
 
 const prompt = promptSync({ sigint: true });
 
 const argv = yargs.usage(`
-===== FIRESTORE MANAGER =====
+${orange("====== FIRESTORE MANAGER ======")}
 
 Usage: $0 [options]
 
@@ -21,27 +21,27 @@ If a configuration file is provided (${constants.settingsFile}), it should have 
     "databaseURL": "..." --> *(default: "https://<your_database_id>.firebaseio.com")
 }
 
-Key file must be downloaded from project configuration (replace with your Firebase project name):
+Key service file must be downloaded from your project configuration:
 https://console.firebase.google.com/u/0/project/<your_database_id>/settings/serviceaccounts/adminsdk`
 )
     .option("i", {
         alias: "init-config",
-        describe: `Create a default backup configuration file (${constants.settingsFile}).`,
+        describe: `Create a default backup configuration file ('${constants.settingsFile}')`,
         type: "boolean",
     })
     .option("g", {
         alias: "generate-backup",
-        describe: `Generate a backup of a Firestore database.`,
+        describe: "Generate a backup of a Firestore database",
         type: "boolean",
     })
     .option("r", {
         alias: "restore-backup",
-        describe: "Restore a backup of a Firestore database.",
+        describe: "Restore a backup of a Firestore database",
         type: "boolean",
     })
     .option("d", {
         alias: "delete",
-        describe: "Delete a Firestore database.",
+        describe: "Delete a Firestore database",
         type: "boolean",
     })
     .check(function (argv) {
@@ -65,12 +65,12 @@ async function main(argv: any) {
     if (argv.g) await createBackup();
     if (argv.r) await restoreBackup();
     if (argv.d) {
-        let resp = prompt(`Are you sure you want to delete ${blue(databaseID)} collections? yes/[no]: `);
+        let resp = prompt(`Are you sure you want to delete ${orange(databaseID)} collections? ${blue("yes/[no]")}: `);
         if ("yes".includes(resp.trim().toLowerCase()) && resp !== "") {
             await deleteDatabase();
         }
         else {
-            console.log("Operation canceled.");
+            console.log("Canceled operation.");
         }
     }
 }
