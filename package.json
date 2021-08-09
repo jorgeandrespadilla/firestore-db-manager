@@ -1,11 +1,14 @@
 {
-  "name": "firestore-manager",
+  "name": "firestore-db-manager",
   "version": "1.0.0",
-  "description": "CLI tool for generating backups, restoring backups and deleting any database created with Cloud Firestore.",
-  "main": "dist/index.js",
+  "description": "CLI tool for generating backups, restoring backups and deleting any database created with Cloud Firestore",
+  "main": "/dist/index.js",
+  "files": [
+      "/dist"
+  ],
   "scripts": {
-    "init": "npm init && npm run build",
-    "build": "tsc || npx tsc",
+    "build": "webpack",
+    "start": "webpack && node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,9 +18,9 @@
   "keywords": [
     "firestore",
     "firebase",
+    "database",
     "backup",
-    "export",
-    "import"
+    "manager"
   ],
   "author": "Jorge Padilla",
   "license": "ISC",
@@ -27,16 +30,22 @@
     "firebase-admin": "^9.11.0",
     "lodash": "^4.17.21",
     "prompt-sync": "^4.2.0",
+    "stream-browserify": "^3.0.0",
     "yargs": "^17.1.0"
   },
   "devDependencies": {
     "@types/cli-spinner": "^0.2.1",
     "@types/lodash": "^4.14.172",
     "@types/prompt-sync": "^4.1.1",
-    "@types/yargs": "^17.0.2"
+    "@types/yargs": "^17.0.2",
+    "ts-loader": "^9.2.5",
+    "typescript": "^4.3.5",
+    "webpack": "^5.49.0",
+    "webpack-cli": "^4.7.2",
+    "webpack-node-externals": "^3.0.0"
   },
   "bugs": {
-      "url": "https://github.com/jorgeandrespadilla/firestore-manager/issues"
+    "url": "https://github.com/jorgeandrespadilla/firestore-manager/issues"
   },
   "homepage": "https://github.com/jorgeandrespadilla/firestore-manager"
 }

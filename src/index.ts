@@ -10,7 +10,7 @@ import constants from './constants';
 const prompt = promptSync({ sigint: true });
 
 const argv = yargs.usage(`
-${orange("====== FIRESTORE MANAGER ======")}
+${orange("====== FIRESTORE DATABASE MANAGER ======")}
 
 Usage: $0 [options]
 
