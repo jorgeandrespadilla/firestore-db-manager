@@ -2,10 +2,13 @@
   "name": "firestore-db-manager",
   "version": "1.0.3",
   "description": "CLI tool for generating backups, restoring backups and deleting any database created with Cloud Firestore.",
-  "main": "/dist/index.js",
+  "main": "dist/index.js",
   "files": [
     "/dist"
   ],
+  "bin": {
+    "firestore-db": "./dist/index.js"
+  },
   "scripts": {
     "build": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
