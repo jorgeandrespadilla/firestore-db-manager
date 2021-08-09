@@ -3,7 +3,7 @@
 [![](https://img.shields.io/npm/l/firestore-db-manager.svg)](https://github.com/andreasonny83/firestore-db-manager/blob/master/LICENSE)
 [![](https://img.shields.io/npm/v/firestore-db-manager.svg)](https://npmjs.org/package/firestore-db-manager)
 
-Firestore Database Manager is a CLI tool that enables generating backups, restoring backups and deleting any database created with [Cloud Firestore](https://firebase.google.com/docs/firestore).
+Firestore Database Manager (`firestore-db`) is a CLI tool that enables generating backups, restoring backups and deleting any database created with [Cloud Firestore](https://firebase.google.com/docs/firestore).
 
 ## Installation
 
@@ -24,10 +24,10 @@ This will install `firestore-db` globally so that it may be run from the command
 Before executing this command, you must download the Firestore database key file from your project service account configurations:
 https://console.firebase.google.com/u/0/project/your_database_id/settings/serviceaccounts/adminsdk
 
+After downloading the corresponding JSON file, you can proceed to execute the command in the same path where you locally saved the project key.
 ````
 firestore-db [options]
 ````
-After downloading the corresponding JSON file, you can proceed to execute the command in the same path where you locally saved the project key.
 
 ## Configurations
 
