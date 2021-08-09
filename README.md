@@ -25,7 +25,7 @@ Before executing this command, you must download the Firestore database key file
 https://console.firebase.google.com/u/0/project/your_database_id/settings/serviceaccounts/adminsdk
 
 ````
-firestore-db-manager [options]
+firestore-db [options]
 ````
 After downloading the corresponding JSON file, you can proceed to execute the command in the same path where you locally saved the project key.
 
