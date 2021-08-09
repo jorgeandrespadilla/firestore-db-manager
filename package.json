@@ -1,6 +1,6 @@
 {
   "name": "firestore-db-manager",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "CLI tool for generating backups, restoring backups and deleting any database created with Cloud Firestore.",
   "main": "/dist/index.js",
   "files": [
